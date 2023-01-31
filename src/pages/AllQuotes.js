@@ -2,8 +2,8 @@ import React from 'react';
 import QuoteList from '../components/quotes/QuoteList';
 
 const DUMMY_QUOTES = [
-    { id: 'p1', author: 'Max', Text: 'Learn React is fun' },
-    { id: 'p2', author: 'Maximilian', Text: 'Learn React is great' },
+    { id: 'p1', author: 'Max', text: 'Learn React is fun' },
+    { id: 'p2', author: 'Maximilian', text: 'Learn React is great' },
 ];
 
 const AllQuotes = () => {
