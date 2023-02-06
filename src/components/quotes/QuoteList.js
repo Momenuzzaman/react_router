@@ -4,12 +4,25 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import QuoteItem from './QuoteItem';
 import classes from './QuoteList.module.css';
 
+const sortQuotes = (quotes, ascending) => {
+  return quotes.sort((quoteA, quoteB) => {
+    if (ascending) {
+      return quoteA.id > quoteB.id ? 1 : -1;
+    }
+    else {
+      return quoteA.id < quoteB.id ? 1 : -1;
+    }
+  });
+};
+
 const QuoteList = (props) => {
   const navigate = useNavigate();
   const location = useLocation()
 
   const queryParams = new URLSearchParams(location.search);
   const isSortingAsc = queryParams.get('sort') === 'asc';
+
+  const sortedQuotes = sortQuotes(props.quotes, isSortingAsc)
 
   const changedSortingHandler = () => {
     navigate('/quotes?sort=' + (isSortingAsc ? 'desc' : 'asc'));
@@ -21,7 +34,7 @@ const QuoteList = (props) => {
         <button onClick={changedSortingHandler}>Sort {isSortingAsc ? 'Descending' : 'Ascending'}</button>
       </div>
       <ul className={classes.list}>
-        {props.quotes.map((quote) => (
+        {sortedQuotes.map((quote) => (
           <QuoteItem
             key={quote.id}
             id={quote.id}
