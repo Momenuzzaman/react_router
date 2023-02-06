@@ -1,8 +1,9 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './QuoteForm.module.css';
+import { ReactRouterPrompt } from 'react-router-prompt';
 
 const QuoteForm = (props) => {
   const authorInputRef = useRef();
@@ -37,7 +38,7 @@ const QuoteForm = (props) => {
           <textarea id='text' rows='5' ref={textInputRef}></textarea>
         </div>
         <div className={classes.actions}>
-          <button className='btn'>Add Quote</button>
+          <but ton className='btn'>Add Quote</but>
         </div>
       </form>
     </Card>

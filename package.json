@@ -9,6 +9,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^6.8.0",
+    "react-router-prompt": "^0.3.0",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
