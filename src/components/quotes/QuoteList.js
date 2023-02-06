@@ -6,7 +6,9 @@ import classes from './QuoteList.module.css';
 
 const QuoteList = (props) => {
   const navigate = useNavigate();
-  const changedSortingHandler = () => { };
+  const changedSortingHandler = () => {
+    navigate('/quotes?sort=asc');
+  };
   return (
     <Fragment>
       <div className={classes.sorting}>
